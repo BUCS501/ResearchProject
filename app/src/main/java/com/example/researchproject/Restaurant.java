@@ -1,7 +1,9 @@
 package com.example.researchproject;
 
+// A class to represent a basic restaurant returned from the Yelp Restaurant List API
 public class Restaurant {
 
+    // Protected fields so that they can be accessed by subclass (DetailedRestaurant)
     protected String id;
     protected String name;
     protected String address;
@@ -12,6 +14,7 @@ public class Restaurant {
     protected String imageUrl;
     protected double rating;
 
+    // Constructor for a basic restaurant
     public Restaurant(String id, String name, String address, String city, String state, String zip, String price, String imageUrl, double rating) {
         this.id = id;
         this.name = name;
@@ -97,6 +100,7 @@ public class Restaurant {
         this.rating = rating;
     }
 
+    // Method to return a string representation of the restaurant's address
     public String getFormattedAddress() {
         return address + ", " + city + ", " + state + " " + zip;
     }

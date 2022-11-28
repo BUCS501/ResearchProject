@@ -10,15 +10,20 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+// Class to get and set the bitmap of the restaurant image in the background
 public class ImageRetrievalThread extends Thread {
 
+    // Fields
     private final String imageURL;
     private final ImageView imageView;
 
+    // Constructor
     public ImageRetrievalThread(String imageURL, ImageView imageView) {
         this.imageURL = imageURL;
         this.imageView = imageView;
     }
+
+    // run() method needed as part of the Thread class
     @Override
     public void run() {
         setBitmapFromURL();

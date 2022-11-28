@@ -16,8 +16,10 @@ import android.widget.TextView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// Class for the detailed restaurant activity
 public class MainActivity extends AppCompatActivity {
 
+    // Fields
     private ImageView restaurantImage;
     private TextView restaurantName;
     private TextView restaurantAddress;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private String restaurantID;
     private DetailedRestaurant restaurant;
 
+    // Method to get all of the views from the layout and assign them to variables
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Gets all of the views from the layout and assigns them to variables
         initializeViews();
 
-        // Gets the restaurant ID from the intent of the RestaurantList Fragment
+        // Gets the restaurant ID from the intent of the RestaurantList Fragment (not used here as activity is alone)
 //        Intent intent = getIntent();
 //        restaurantID = intent.getExtras().getString("restaurantID");
 

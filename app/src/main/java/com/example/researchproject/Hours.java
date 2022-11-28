@@ -1,17 +1,21 @@
 package com.example.researchproject;
 
+// A class to represent the hours a restaurant is open
 public class Hours implements Comparable<Hours> {
 
+    // Fields
     private long day;
     private String open;
     private String close;
 
+    // Constructor
     public Hours(long day, String open, String close) {
         this.day = day;
         this.open = open;
         this.close = close;
     }
 
+    // Getters and setters
     public long getDay() {
         return day;
     }
@@ -36,6 +40,7 @@ public class Hours implements Comparable<Hours> {
         this.close = close;
     }
 
+    // Method to create the formatted time using 12-hour clock with AM/PM
     public String getFormattedHours() {
         int openHour = Integer.parseInt(open.substring(0, 2));
         int closeHour = Integer.parseInt(close.substring(0, 2));
@@ -48,6 +53,7 @@ public class Hours implements Comparable<Hours> {
         return formattedOpen + " - " + formattedClose;
     }
 
+    // Method to compare two hours objects
     @Override
     public int compareTo(Hours other) {
         return Long.compare(this.day, other.day);

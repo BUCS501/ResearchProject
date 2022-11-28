@@ -3,6 +3,7 @@ package com.example.researchproject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// A class to represent a detailed restaurant returned from the Yelp Restaurant Details API
 public class DetailedRestaurant extends Restaurant {
 
 //    protected String id;
@@ -14,16 +15,19 @@ public class DetailedRestaurant extends Restaurant {
 //    protected String price;
 //    protected String imageUrl;
 //    protected double rating;
+    // Additional fields for a detailed restaurant
     private String phoneNumber;
     private String displayedPhoneNumber;
     private String restaurantUrl;
     private ArrayList<Hours> weekHours;
     private HashMap<Long, ArrayList<Hours>> weekHoursMap;
 
+    // Constructor for a detailed restaurant with only the basic fields
     public DetailedRestaurant(String id, String name, String address, String city, String state, String zip, String price, String imageUrl, double rating) {
         super(id, name, address, city, state, zip, price, imageUrl, rating);
     }
 
+    // Constructor for a detailed restaurant with all fields
     public DetailedRestaurant(String id, String name, String address, String city, String state, String zip, String price, String imageUrl, double rating, String phoneNumber, String displayedPhoneNumber, String restaurantUrl, ArrayList<Hours> weekHours) {
         super(id, name, address, city, state, zip, price, imageUrl, rating);
         this.phoneNumber = phoneNumber;
@@ -34,6 +38,7 @@ public class DetailedRestaurant extends Restaurant {
         initWeekHoursMap();
     }
 
+    // Constructor for a detailed restaurant with a basic restaurant and all extra fields
     public DetailedRestaurant(Restaurant restaurant, String phoneNumber, String displayedPhoneNumber, String restaurantUrl, ArrayList<Hours> weekHours) {
         super(restaurant.getId(), restaurant.getName(), restaurant.getAddress(), restaurant.getCity(), restaurant.getState(), restaurant.getZip(), restaurant.getPrice(), restaurant.getImageUrl(), restaurant.getRating());
         this.phoneNumber = phoneNumber;
@@ -44,6 +49,7 @@ public class DetailedRestaurant extends Restaurant {
         initWeekHoursMap();
     }
 
+    // Getters and setters
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -88,6 +94,7 @@ public class DetailedRestaurant extends Restaurant {
         return weekHoursMap.get(day);
     }
 
+    // Fill the weekHoursMap with info for a specific day
     public void setHoursForDay(Hours hours) {
         if (weekHoursMap == null) {
             weekHoursMap = new HashMap<>();
@@ -100,6 +107,7 @@ public class DetailedRestaurant extends Restaurant {
         weekHoursMap.put(hours.getDay(), hoursForDay);
     }
 
+    // Initialize the weekHoursMap
     public void initWeekHoursMap() {
         for (Hours hours : weekHours) {
              // if hours not in map, add it
@@ -113,6 +121,7 @@ public class DetailedRestaurant extends Restaurant {
 
     }
 
+    // Convert the weekHoursMap to a string
     public String getFormattedHoursForDay(long day) {
         ArrayList<Hours> hoursForDay = weekHoursMap.get(day);
         if (hoursForDay == null) {
