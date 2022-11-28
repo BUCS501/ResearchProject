@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button callButton;
     private Button directionsButton;
     private Button websiteButton;
-    private Button bookmarkButton;
+    private Button changeAPIButton;
     private TableLayout restaurantHours;
     private String restaurantID;
     private DetailedRestaurant restaurant;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bookmarkButton.setOnClickListener(new View.OnClickListener() {
+        changeAPIButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO: Insert bookmark functionality
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         callButton = (Button) findViewById(R.id.callBtn);
         directionsButton = (Button) findViewById(R.id.directionsBtn);
         websiteButton = (Button) findViewById(R.id.websiteBtn);
-        bookmarkButton = (Button) findViewById(R.id.bookmarkBtn);
+        changeAPIButton = (Button) findViewById(R.id.changeAPIBtn);
         restaurantHours = (TableLayout) findViewById(R.id.restaurantHours);
     }
 

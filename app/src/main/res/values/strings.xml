@@ -12,6 +12,7 @@
     <string name="directionsButton">Directions</string>
     <string name="websiteButton">Website</string>
     <string name="restaurantBookmarkButton">Save this Restaurant</string>
+    <string name="changeActivity">Change to other API Demo</string>
     <string name="hours">Hours</string>
     <string name="sunday">Sunday: </string>
     <string name="monday">Monday: </string>
