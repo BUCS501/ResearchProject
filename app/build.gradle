@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
 }
+def localPropertiesFile = rootProject.file("local.properties")
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(localPropertiesFile))
 
 android {
     namespace 'com.example.researchproject'
@@ -12,7 +15,8 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "YELP_API_KEY", localProperties["yelp_api_key"]
+        buildConfigField "String", "TICKETMASTER_API_KEY", localProperties["ticketmaster_api_key"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

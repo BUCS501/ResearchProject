@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
         changeAPIButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Insert bookmark functionality
+                Intent intent = new Intent(MainActivity.this, DetailedEventActivity.class);
+                startActivity(intent);
             }
         });
 
