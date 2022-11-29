@@ -16,7 +16,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAuDArpUxKlCaV60SBAk2FBida0J6jDQ48"/>
-
+        <activity
+            android:name=".DetailedEventActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
